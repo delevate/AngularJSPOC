@@ -1,0 +1,27 @@
+<h2> Upload files </h2>
+
+<div ng-controller="FileUploadCtrl">
+ 	<div class="control-group">	
+ 		<div class="controls">
+ 			<span class="btn btn-sucess fileinput-button">
+ 					<i class="icon-plus icon-white"></i>
+ 					<input type="file" name="file" dataurl="Users/FileUpload" ng-click="addfiles(this)" mutiple upload/>
+ 					<span>
+ 						Add Files..	
+ 					</span>
+ 			</span>
+ 		</div>
+ 
+ 	</div>
+
+ 	<div>
+ 		<span ng-show="!files.length">No files selected!!</span>
+ 		<ul>
+ 			<li ng-repeat="file in files">
+ 				{{file}}
+ 			</li>
+ 	</div>
+ 	<div class="form-actions">
+          <button type="submit" class="btn btn-primary pull left" ng-click="upload()">Upload</button>
+ 	</div>
+</div>

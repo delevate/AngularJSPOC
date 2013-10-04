@@ -1,0 +1,38 @@
+﻿<div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="navbar-inner">
+
+            <div class="container">
+                <a href="#" class="btn btn-inverse">Welcome!! <span>{{ UserName }} </span></a>
+
+                <span style="text-align: right;">
+                    <a href="#" class="btn btn-inverse" onclick="logoutUser();">Logout</a>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div class="container">
+    <div class="leaderboard">
+        <h1>My Activity Monitor</h1>
+
+
+    </div>
+    <div data-transition="slidefade">
+        <div ng-show="getPartials('/dashboard')">
+            <div ng-include src="'app/partials/MyActivity.html'"></div>
+        </div>
+        <div ng-show="getPartials('/AddActivity')">
+            <div ng-include src="'app/partials/Activity.html'"></div>
+        </div>
+    </div>
+</div>
+
+
+

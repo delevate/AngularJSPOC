@@ -1,0 +1,68 @@
+﻿
+<div class="panel">
+
+    <div class="list-group" style="padding:5px;">
+       <span style="margin-bottom:5px;"><button type="button" ng-click="LoadActivity()" class="btn btn-primary">
+  <i class="icon-plus-sign icon-white"></i> Add Activity
+</button></span>
+        <div class="well well-small">
+            <span >
+                <input type="text" ng-model="search" placeholder="search..." />
+            </span>
+        </div>
+    </div>
+     
+  <div class="panel" style="margin-top:5px;">
+    <table class="table table-striped">
+
+        <tr>
+            <th> Activity</th>
+             <th> </th>
+            <th> Edit</th>
+
+        </tr>
+        <tr ng-repeat="activity in Activities | filter:search"  ng-controller="DashboardCtrl" ng-init="Display(activity)" bn-log-dom-creation>
+            <td>
+                
+               <span ng-show="editrow">  {{ activity.Activity_Name }}</span>
+                <span ng-hide="editrow"><form class="well" id="frmNewActivity" ng-submit="ShowEdit(activity)"></span>
+                <span ng-hide="editrow"> <input type="text" required ng-model="activity.Activity_Name" id="Activity_Name" name="Activity_Name" /> </span>
+            </td>
+            <td>
+              <span ng-show="editrow">  {{ activity.Description }}</span>
+                <span ng-hide="editrow" > <input type="text" required ng-model="activity.Description" id="Description" name="Description" /> </span>
+            </td>
+            <td>
+               <span ng-hide="editrow"><button type="submit" ng-click="ShowEdit(activity);editrow=true" class="btn">Save</button> </span>
+                <span ng-hide="editrow"><button ng-click="editrow=true" class="btn">Cancel</button>
+                    
+                </span>
+                <span ng-hide="editrow"></form></span>
+               <span ng-show="editrow"><button ng-click="editrow=false"  class="btn ">Edit</button></span>
+                
+            </td>
+
+            
+        </tr>
+         <form class="well" id="frmAddActivity" ng-submit="submitNewActivityInline()" ng-controller="DashboardCtrl">
+         <tr>
+            <td>
+                <input type="text" placeholder="Activity" ng-model="Activity.Activity_Name" required name="Activity_Name" id="Activity_Name" />
+            </td>
+            <td>
+
+                <input type="text" placeholder="Description" ng-model="Activity.Description" required name="Description" id="Description" />
+            </td>
+            <td>
+                <input type="submit"  class="btn" value="Add"></input>
+            </td>
+             </form>
+        </tr>
+   
+       
+
+    </table>
+ 
+      </div>
+
+</div>

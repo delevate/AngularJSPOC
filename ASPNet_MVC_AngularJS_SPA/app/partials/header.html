@@ -1,0 +1,54 @@
+﻿<div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="navbar-inner">
+
+            <div class="container">
+                <a href="#" class="btn btn-inverse">ASP.net MVC with Angular JS & Require JS SPA</a>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div class="container">
+    <div class="leaderboard">
+        <h1>POC Application - Angular JS with ASP.net MVC</h1>
+        <p>
+            The application has been built using Angular JS with ASP.net MVC framework.
+
+        </p>
+        <p>
+            Angular JS Boilerplate Framework has been used for client side. ASP.net MVC Web API has been used
+            for Server side.
+        </p>
+    </div>
+    <div name="info" class="modal" style="display:{{displayMessage}};">
+        {{InfoMessage}}
+    </div>
+    <div style="margin-left: 5px;">
+        <div class="row">
+            <div class="span4" style="width:300px;height:500px;padding:5px;" >
+                <div class="" ng-include src="'app/partials/login.html'">Test</div>
+                 <div class="info">
+           <span style="color:red;">{{ErrorMessage}}</span>
+            {{SuccessMessage}}
+       </div>
+            </div>
+           
+            <div class="span4" style="padding:5px;margin-right:10px;">
+                <div class="" ng-include src="'app/partials/SignUp.html'">Test</div>
+            </div>
+            <div class="span4">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+

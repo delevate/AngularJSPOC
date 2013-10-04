@@ -1,0 +1,58 @@
+<div id="container1" style="min-width: 400px; height: 400px; margin: 0 auto" ng-controller="DataCtrl">
+    <script type="text/javascript">
+        //var resutldata;
+         function showData() {
+            //alert(resultdata);
+            debugger;
+            $('#containerchart').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'No of Times User has logged In'
+                },
+                subtitle: {
+                    text: 'Source: ElevateBizsolutions.com'
+                },
+                xAxis: {
+                    categories: [
+                        
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'No of Logins'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} times.</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{ name: "baly", data:[4.0] }, { name: "daman", data:[3] }, ]
+	            
+            });
+        });
+
+    
+	   
+    </script>
+    <h2>Highchart showing activity data by users.<a href="javascript:void();" onclick="showData();">  {{ActivityData.length}} </a></h2>
+
+    <div id="containerchart">
+    </div>
+
+
+
+    
+</div>

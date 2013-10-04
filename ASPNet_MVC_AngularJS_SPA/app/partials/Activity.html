@@ -1,0 +1,22 @@
+﻿<div>
+
+    <fieldset>
+        <legend>Add New Activity</legend>
+        <form class="well" id="frmNewActivity" ng-submit="submitNewActivity()" ng-controller="DashboardCtrl">
+           <input type="hidden" ng-model="Activity.ID" value="{{ EditActivity.ID }}" />
+             <div class="form-group">
+                <label>Activity Name</label>
+                <input type="text" class="form-control" value="{{EditActivity.Activty_Name}}" ng-model="Activity.Activity_Name" required id="Activity_Name" required placeholder="Activity">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" value="{{EditActivity.Description}}" ng-model="Activity.Description" required id="Description" required placeholder="Describe your activity">
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button ng-click="CancelActivity()" class="btn btn-default">Cancel</button>
+        </form>
+    </fieldset>
+
+
+</div>
